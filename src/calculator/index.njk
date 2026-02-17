@@ -1,0 +1,313 @@
+---
+layout: base.njk
+title: Healthcare Savings Calculator
+description: Calculate how much your company could save with Optiv Health's Section 125 supplemental health plans. Free, instant estimate.
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Savings Calculator</h1>
+    <p>See exactly how much your company could save. Takes 30 seconds.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="calculator-wrapper">
+      <div class="calc-form">
+        <div class="calc-group">
+          <label for="calc-employees">Number of Employees</label>
+          <input type="number" id="calc-employees" placeholder="e.g., 150" min="1" value="">
+          <span class="calc-help">Full-time employees eligible for benefits</span>
+        </div>
+        
+        <div class="calc-group">
+          <label for="calc-current">Current Monthly Health Spend (Optional)</label>
+          <input type="number" id="calc-current" placeholder="e.g., 50000" min="0">
+          <span class="calc-help">Total monthly premium costs if known</span>
+        </div>
+        
+        <div class="calc-group">
+          <label for="calc-participation">Expected Participation Rate</label>
+          <select id="calc-participation">
+            <option value="0.85">85% (Typical)</option>
+            <option value="0.70">70% (Conservative)</option>
+            <option value="0.95">95% (High Engagement)</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="calc-results">
+        <h2>Your Estimated Savings</h2>
+        
+        <div class="result-card result-primary">
+          <span class="result-label">Annual Company Savings</span>
+          <span class="result-value" id="result-total">$0</span>
+          <span class="result-note">Based on $750 avg savings per participating employee</span>
+        </div>
+        
+        <div class="result-grid">
+          <div class="result-card">
+            <span class="result-label">FICA Tax Savings</span>
+            <span class="result-value" id="result-fica">$0</span>
+          </div>
+          <div class="result-card">
+            <span class="result-label">Estimated Claims Reduction</span>
+            <span class="result-value" id="result-claims">$0</span>
+          </div>
+        </div>
+        
+        <div class="result-employees">
+          <h3>Employee Benefits</h3>
+          <div class="emp-benefit">
+            <span>Free Prescriptions Value</span>
+            <span id="emp-rx">$0</span>
+          </div>
+          <div class="emp-benefit">
+            <span>Telehealth Visits Saved</span>
+            <span id="emp-telehealth">$0</span>
+          </div>
+          <div class="emp-benefit">
+            <span>Tax Savings Per Employee</span>
+            <span id="emp-tax">$0</span>
+          </div>
+        </div>
+        
+        <div class="calc-cta">
+          <p>Want exact numbers? We'll run a detailed analysis using your actual data.</p>
+          <a href="{{ '/contact/' | url }}" class="btn btn-primary btn-lg">Get Your Custom Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--light);">
+  <div class="container">
+    <div class="section-header">
+      <h2>How We Calculate Savings</h2>
+    </div>
+    
+    <div class="method-grid">
+      <div class="method-card">
+        <h3>FICA Tax Savings</h3>
+        <p>Pre-tax deductions reduce payroll taxes by 7.65% on every contributed dollar. For 100 employees at $100/month, that's $9,180/year in tax savings alone.</p>
+      </div>
+      <div class="method-card">
+        <h3>Claims Reduction</h3>
+        <p>Free prescriptions improve medication adherence. Telehealth prevents ER visits. Industry data shows 15-25% reduction in overall claims costs.</p>
+      </div>
+      <div class="method-card">
+        <h3>Employee Retention</h3>
+        <p>Better benefits reduce turnover. The average cost to replace an employee is 50-200% of their salary. Lower turnover = massive savings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.calculator-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .calculator-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calc-form {
+  background: var(--light);
+  padding: var(--space-xl);
+  border-radius: 12px;
+}
+
+.calc-group {
+  margin-bottom: var(--space-xl);
+}
+
+.calc-group:last-child {
+  margin-bottom: 0;
+}
+
+.calc-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.calc-group input,
+.calc-group select {
+  width: 100%;
+  padding: var(--space-md);
+  font-size: 1.125rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.calc-group input:focus,
+.calc-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.calc-help {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-top: var(--space-xs);
+}
+
+.calc-results {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+}
+
+.calc-results h2 {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.result-card {
+  background: var(--light);
+  padding: var(--space-lg);
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.result-card.result-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+}
+
+.result-label {
+  display: block;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.result-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: var(--space-xs) 0;
+}
+
+.result-primary .result-value {
+  color: var(--accent);
+}
+
+.result-note {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.result-grid .result-value {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.result-employees {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--gray-200);
+}
+
+.result-employees h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-md);
+}
+
+.emp-benefit {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.emp-benefit span:last-child {
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.calc-cta {
+  margin-top: var(--space-xl);
+  text-align: center;
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--gray-200);
+}
+
+.calc-cta p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-md);
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+}
+
+.method-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.method-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.method-card p {
+  color: var(--gray-600);
+  margin: 0;
+}
+</style>
+
+<script>
+function calculate() {
+  const employees = parseInt(document.getElementById('calc-employees').value) || 0;
+  const participation = parseFloat(document.getElementById('calc-participation').value);
+  const participating = Math.round(employees * participation);
+  
+  // Savings assumptions
+  const avgSavingsPerEmployee = 750;
+  const monthlyPremium = 100; // Assumed avg premium
+  const ficaRate = 0.0765;
+  
+  // Calculate
+  const totalSavings = participating * avgSavingsPerEmployee;
+  const ficaSavings = Math.round(participating * monthlyPremium * 12 * ficaRate);
+  const claimsSavings = Math.round(totalSavings * 0.4); // 40% comes from claims reduction
+  
+  // Employee benefits
+  const rxValue = participating * 400; // Avg prescription savings
+  const telehealthValue = participating * 150; // Avg telehealth savings
+  const taxPerEmployee = Math.round(monthlyPremium * 12 * 0.22); // ~22% marginal rate
+  
+  // Update display
+  document.getElementById('result-total').textContent = '$' + totalSavings.toLocaleString();
+  document.getElementById('result-fica').textContent = '$' + ficaSavings.toLocaleString();
+  document.getElementById('result-claims').textContent = '$' + claimsSavings.toLocaleString();
+  document.getElementById('emp-rx').textContent = '$' + rxValue.toLocaleString() + '/yr';
+  document.getElementById('emp-telehealth').textContent = '$' + telehealthValue.toLocaleString() + '/yr';
+  document.getElementById('emp-tax').textContent = '$' + taxPerEmployee + '/yr';
+}
+
+document.getElementById('calc-employees').addEventListener('input', calculate);
+document.getElementById('calc-participation').addEventListener('change', calculate);
+</script>

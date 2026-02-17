@@ -1,0 +1,222 @@
+---
+layout: base.njk
+title: Book Your Free Consultation
+description: Schedule a 30-minute call with Brian Berekenbile to see how much your company could save with Optiv Health's Section 125 supplemental plans.
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Let's Talk</h1>
+    <p>Schedule a free consultation or register for our upcoming webinar.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-form">
+        <h2>Get Your Custom Quote</h2>
+        <p>Fill out the form below and I'll reach out within 24 hours with a personalized savings analysis.</p>
+        
+        <form action="/api/contact" method="POST">
+          <!-- Honeypot -->
+          <div class="fax-number">
+            <label for="fax_number">Fax Number</label>
+            <input type="text" name="fax_number" id="fax_number" tabindex="-1" autocomplete="off">
+          </div>
+          
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Work Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Company Name *</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="employees">Number of Employees *</label>
+            <select id="employees" name="employees" required>
+              <option value="">Select range...</option>
+              <option value="25-50">25-50</option>
+              <option value="51-100">51-100</option>
+              <option value="101-250">101-250</option>
+              <option value="251-500">251-500</option>
+              <option value="500+">500+</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="role">Your Role</label>
+            <select id="role" name="role">
+              <option value="">Select role...</option>
+              <option value="HR Director">HR Director</option>
+              <option value="Benefits Manager">Benefits Manager</option>
+              <option value="CFO/Finance">CFO/Finance</option>
+              <option value="CEO/Owner">CEO/Owner</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Anything else we should know?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Current challenges, timeline, etc."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg">Send Request</button>
+        </form>
+      </div>
+      
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>📅 Free Webinar</h3>
+          <p class="webinar-date">{{ site.webinarDate }}</p>
+          <p>Join us for a 45-minute session covering:</p>
+          <ul>
+            <li>How Section 125 plans work</li>
+            <li>Real savings examples</li>
+            <li>Implementation timeline</li>
+            <li>Live Q&A</li>
+          </ul>
+          <a href="#webinar-form" class="btn btn-accent">Register for Webinar</a>
+        </div>
+        
+        <div class="info-card">
+          <h3>Prefer a 1-on-1?</h3>
+          <p>Schedule a private call to review your specific situation and get a custom savings analysis.</p>
+          <p><strong>30-minute consultations available:</strong></p>
+          <ul>
+            <li>Monday - Friday</li>
+            <li>8am - 5pm CT</li>
+            <li>Virtual or phone</li>
+          </ul>
+        </div>
+        
+        <div class="info-card">
+          <h3>What to Expect</h3>
+          <ol>
+            <li><strong>Initial Call (30 min)</strong> — We review your situation and run preliminary numbers</li>
+            <li><strong>Custom Proposal</strong> — Detailed savings analysis specific to your company</li>
+            <li><strong>Decision Time</strong> — No pressure. If it works, we move forward. If not, no hard feelings.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-3xl);
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-form h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.contact-form > p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-xl);
+}
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-md);
+  font-size: 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.contact-form .btn {
+  width: 100%;
+}
+
+.info-card {
+  background: var(--light);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  margin-bottom: var(--space-lg);
+}
+
+.info-card:last-child {
+  margin-bottom: 0;
+}
+
+.info-card h3 {
+  margin-bottom: var(--space-md);
+}
+
+.webinar-date {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--space-md);
+}
+
+.info-card ul,
+.info-card ol {
+  margin: var(--space-md) 0;
+  padding-left: var(--space-lg);
+}
+
+.info-card li {
+  margin-bottom: var(--space-xs);
+}
+
+.info-card .btn {
+  width: 100%;
+  margin-top: var(--space-md);
+}
+
+/* Honeypot */
+.fax-number {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+</style>

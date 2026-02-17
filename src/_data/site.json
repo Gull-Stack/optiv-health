@@ -1,0 +1,26 @@
+{
+  "name": "Optiv Health Benefits",
+  "tagline": "Save $600-900/Employee/Year on Healthcare",
+  "description": "Section 125 supplemental health plans with free prescriptions, 24/7 telehealth, and 98.4% renewal rates. Stacks with your existing major medical.",
+  "url": "https://optivhealthbenefits.com",
+  "phone": "",
+  "email": "",
+  "address": "",
+  "owner": "Brian Berekenbile",
+  "webinarDate": "March 3, 2026",
+  "renewalRate": "98.4%",
+  "avgSavings": "$750",
+  "savingsRange": "$600-900",
+  "formularySize": "1,000+",
+  "colors": {
+    "primary": "#1E3A5F",
+    "secondary": "#4A90A4",
+    "accent": "#F5A623",
+    "light": "#F8F9FA",
+    "dark": "#1A1A2E"
+  },
+  "social": {
+    "linkedin": "",
+    "twitter": ""
+  }
+}

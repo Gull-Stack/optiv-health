@@ -1,0 +1,238 @@
+---
+layout: base.njk
+title: Employee Benefits That Actually Work
+description: Free prescriptions, 24/7 telehealth, and tax savings for your employees. Benefits that make a real difference in their lives—and your bottom line.
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Benefits That Matter</h1>
+    <p>Your employees deserve more than a benefits card they can't afford to use. Here's what they actually get.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="benefits-hero">
+      <div class="benefit-main">
+        <div class="benefit-icon">💊</div>
+        <h2>Free Prescriptions</h2>
+        <p class="benefit-subtitle">1,000+ medications at $0 copay</p>
+        <p>High deductibles mean employees skip prescriptions. That leads to bigger health problems and higher claims. Our formulary covers the most commonly prescribed generics—free.</p>
+        <ul class="benefit-list">
+          <li>Blood pressure medications</li>
+          <li>Diabetes medications</li>
+          <li>Cholesterol medications</li>
+          <li>Antibiotics</li>
+          <li>Mental health medications</li>
+          <li>And 900+ more...</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--light);">
+  <div class="container">
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-card-icon">📱</div>
+        <h3>24/7 Telehealth</h3>
+        <p>Unlimited virtual doctor visits, any time. Cold, flu, rash, UTI—most issues resolved in under 15 minutes without leaving home.</p>
+        <div class="benefit-stat">
+          <span class="stat-value">$0</span>
+          <span class="stat-desc">Per visit (unlimited)</span>
+        </div>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-card-icon">💰</div>
+        <h3>Higher Take-Home Pay</h3>
+        <p>Pre-tax premium deductions mean employees keep more of every paycheck. The average worker saves $300-500/year in taxes alone.</p>
+        <div class="benefit-stat">
+          <span class="stat-value">$300-500</span>
+          <span class="stat-desc">Annual tax savings per employee</span>
+        </div>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-card-icon">🏥</div>
+        <h3>Works With Any Plan</h3>
+        <p>Employees keep their existing major medical coverage. Optiv Health stacks on top—filling gaps without disrupting what they already have.</p>
+        <div class="benefit-stat">
+          <span class="stat-value">100%</span>
+          <span class="stat-desc">Compatible with existing plans</span>
+        </div>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-card-icon">🛡️</div>
+        <h3>Preventive Care Focus</h3>
+        <p>Easy access to care means employees address issues early—before they become expensive claims. Prevention beats treatment every time.</p>
+        <div class="benefit-stat">
+          <span class="stat-value">40%</span>
+          <span class="stat-desc">Reduction in ER visits</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>For Employers: The Bottom Line</h2>
+      <p class="section-subtitle">Your employees win. But so does your business.</p>
+    </div>
+    
+    <div class="employer-benefits">
+      <div class="employer-benefit">
+        <h3>Reduce FICA Taxes</h3>
+        <p>Every dollar contributed to pre-tax benefits saves you 7.65% in payroll taxes. For a 150-employee company, that's $15,000-25,000/year.</p>
+      </div>
+      <div class="employer-benefit">
+        <h3>Lower Claims Costs</h3>
+        <p>Free prescriptions and telehealth mean fewer expensive doctor visits and hospitalizations. Healthier employees = lower premiums next year.</p>
+      </div>
+      <div class="employer-benefit">
+        <h3>Improve Retention</h3>
+        <p>Benefits drive loyalty. When employees actually use their coverage—and save money doing it—they're not looking for the exit.</p>
+      </div>
+      <div class="employer-benefit">
+        <h3>Easy Administration</h3>
+        <p>We handle enrollment, member support, and ongoing administration. Your HR team gets better benefits without more work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Give Your Team Benefits They'll Actually Use</h2>
+      <p>Schedule a call and we'll show you exactly what your employees would receive—and what your company would save.</p>
+      <a href="{{ '/contact/' | url }}" class="btn btn-accent btn-lg">Get Your Custom Quote</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.benefits-hero {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.benefit-main .benefit-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+}
+
+.benefit-main h2 {
+  margin-bottom: var(--space-xs);
+}
+
+.benefit-subtitle {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+}
+
+.benefit-main > p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-xl);
+}
+
+.benefit-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-sm);
+  list-style: none;
+  text-align: left;
+  background: var(--light);
+  padding: var(--space-xl);
+  border-radius: 12px;
+}
+
+.benefit-list li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.benefit-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+}
+
+.benefit-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.benefit-card-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+}
+
+.benefit-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.benefit-card > p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-lg);
+}
+
+.benefit-stat {
+  background: var(--light);
+  padding: var(--space-md);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.stat-desc {
+  font-size: 0.75rem;
+  color: var(--gray-600);
+}
+
+.employer-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+}
+
+.employer-benefit {
+  padding: var(--space-xl);
+  background: var(--light);
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+}
+
+.employer-benefit h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.employer-benefit p {
+  color: var(--gray-600);
+  margin: 0;
+}
+</style>

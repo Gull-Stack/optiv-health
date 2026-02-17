@@ -1,0 +1,40 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="{{ '/assets/images/optiv-logo-white.png' | url }}" alt="{{ site.name }}" class="footer-logo">
+        <p>{{ site.description }}</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="{{ '/about/' | url }}">About Brian</a></li>
+          <li><a href="{{ '/how-it-works/' | url }}">How It Works</a></li>
+          <li><a href="{{ '/benefits/' | url }}">Benefits</a></li>
+          <li><a href="{{ '/contact/' | url }}">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="{{ '/calculator/' | url }}">Savings Calculator</a></li>
+          <li><a href="{{ '/faq/' | url }}">FAQ</a></li>
+          <li><a href="{{ '/case-studies/' | url }}">Case Studies</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-cta">
+        <h4>Ready to Save?</h4>
+        <p>See how much your company could save with a free consultation.</p>
+        <a href="{{ '/contact/' | url }}" class="btn btn-accent">Get Your Quote</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {{ page.date | date: "%Y" }} {{ site.name }}. All rights reserved.</p>
+      <p class="footer-credit">Marketing by <a href="https://gullstack.com" target="_blank" rel="noopener">GullStack</a></p>
+    </div>
+  </div>
+</footer>

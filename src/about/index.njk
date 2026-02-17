@@ -1,0 +1,160 @@
+---
+layout: base.njk
+title: About Brian Berekenbile
+description: Meet Brian Berekenbile, founder of Optiv Health Benefits. Helping employers save money while improving employee healthcare coverage.
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>About Optiv Health</h1>
+    <p>Real benefits expertise. Real savings. Real results.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="{{ '/assets/images/brian-headshot.jpg' | url }}" alt="Brian Berekenbile">
+      </div>
+      <div class="about-content">
+        <h2>Meet Brian Berekenbile</h2>
+        <p class="lead">I've spent my career in employee benefits, and I've seen the same story play out hundreds of times: employers want to do right by their people, but costs keep climbing while coverage keeps shrinking.</p>
+        
+        <p>That's why I focus exclusively on Section 125 supplemental plans. They're the rare solution where everyone wins—employees get better benefits, employers save money, and nobody has to make painful trade-offs.</p>
+        
+        <p>My approach is simple: I show you the math first. No pressure, no spin. If the numbers work, we move forward. If they don't, I'll tell you that too.</p>
+        
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat-value">4,000+</span>
+            <span class="about-stat-label">Employees in current pipeline</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-value">98.4%</span>
+            <span class="about-stat-label">Client renewal rate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--light);">
+  <div class="container">
+    <div class="section-header">
+      <h2>Why Work With Me?</h2>
+    </div>
+    
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>No Corporate Red Tape</h3>
+        <p>I'm not a faceless corporation. When you call, you get me. When there's an issue, I fix it. No ticket numbers, no hold times.</p>
+      </div>
+      <div class="why-card">
+        <h3>I Specialize</h3>
+        <p>Some advisors dabble in everything. I focus on one thing—Section 125 supplemental plans—and I know them inside and out.</p>
+      </div>
+      <div class="why-card">
+        <h3>Transparent Pricing</h3>
+        <p>No hidden fees, no surprise costs. I'll show you exactly what you'll pay and what you'll save before you commit to anything.</p>
+      </div>
+      <div class="why-card">
+        <h3>Results-Focused</h3>
+        <p>My 98.4% renewal rate isn't because of contracts—it's because clients keep saving money year after year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Let's Talk Numbers</h2>
+      <p>Schedule a 30-minute call. I'll show you exactly what your company could save—no obligation, no pressure.</p>
+      <a href="{{ '/contact/' | url }}" class="btn btn-accent btn-lg">Book Your Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.about-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+.about-image img {
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-content .lead {
+  font-size: 1.25rem;
+  color: var(--gray-700);
+  margin-bottom: var(--space-lg);
+}
+
+.about-content p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-md);
+}
+
+.about-stats {
+  display: flex;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--gray-200);
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.about-stat-label {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-xl);
+}
+
+.why-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.why-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.why-card p {
+  color: var(--gray-600);
+  margin: 0;
+}
+</style>
