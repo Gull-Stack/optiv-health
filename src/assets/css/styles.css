@@ -803,15 +803,19 @@ h3 {
 .footer-credit .gullstack-logo {
   font-family: 'Young Serif', Georgia, serif;
   font-size: 1.1rem;
-  color: #fff;
+  color: #fff !important;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+}
+
+.footer-credit .gullstack-logo span {
+  color: #fff !important;
 }
 
 .footer-credit .gullstack-bird {
-  height: 20px;
+  height: 24px;
   width: auto;
 }
 
