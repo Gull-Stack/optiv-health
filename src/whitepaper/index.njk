@@ -1,0 +1,291 @@
+---
+layout: base.njk
+title: Free Whitepaper - The Employer's Guide to Section 125 Health Benefits
+description: Download our comprehensive guide to Section 125 supplemental health plans. Learn how to save $600-900 per employee while improving benefits.
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Free Whitepaper</h1>
+    <p>The Employer's Guide to Section 125 Health Benefits</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="whitepaper-download-grid">
+      <div class="whitepaper-preview">
+        <div class="preview-card">
+          <div class="preview-icon">📄</div>
+          <h3>What You'll Learn</h3>
+          <ul class="preview-list">
+            <li>✓ How Section 125 plans reduce employer FICA taxes</li>
+            <li>✓ The math behind $600-900/employee savings</li>
+            <li>✓ Implementation timeline and requirements</li>
+            <li>✓ Free prescription and telehealth benefits explained</li>
+            <li>✓ Real case studies with actual ROI numbers</li>
+            <li>✓ Common mistakes to avoid</li>
+          </ul>
+        </div>
+        
+        <div class="preview-stats">
+          <div class="preview-stat">
+            <span class="stat-value">15</span>
+            <span class="stat-label">Pages</span>
+          </div>
+          <div class="preview-stat">
+            <span class="stat-value">5</span>
+            <span class="stat-label">Case Studies</span>
+          </div>
+          <div class="preview-stat">
+            <span class="stat-value">10</span>
+            <span class="stat-label">Min Read</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="whitepaper-form-container">
+        <div class="form-card">
+          <h2>Get Your Free Copy</h2>
+          <p>Enter your email and we'll send the whitepaper directly to your inbox.</p>
+          
+          <form id="whitepaper-form" class="whitepaper-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="John Smith">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" required placeholder="john@company.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" placeholder="Acme Corp (optional)">
+            </div>
+            
+            <div class="form-group">
+              <label for="employees">Number of Employees</label>
+              <select id="employees" name="employees">
+                <option value="">Select range...</option>
+                <option value="10-49">10-49 employees</option>
+                <option value="50-99">50-99 employees</option>
+                <option value="100-249">100-249 employees</option>
+                <option value="250-499">250-499 employees</option>
+                <option value="500+">500+ employees</option>
+              </select>
+            </div>
+            
+            <!-- Honeypot -->
+            <div style="position: absolute; left: -9999px;">
+              <input type="text" name="company_fax" tabindex="-1" autocomplete="off">
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg btn-full">
+              Send Me the Whitepaper
+            </button>
+            
+            <p class="form-note">We respect your privacy. No spam, ever.</p>
+          </form>
+          
+          <!-- Success State -->
+          <div id="form-success" class="form-success" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h3>Check Your Inbox!</h3>
+            <p>We've sent the whitepaper to your email. If you don't see it in a few minutes, check your spam folder.</p>
+            <a href="https://drive.google.com/file/d/1u_SMoYxZiOxQeeoFxPtC-tmdDhxOITFR/view" target="_blank" class="btn btn-accent btn-lg">
+              Download Now →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Want to Talk Numbers?</h2>
+      <p>Skip the reading and get a personalized savings analysis for your company.</p>
+      <a href="{{ '/contact/' | url }}" class="btn btn-accent btn-lg">Book a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.whitepaper-download-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .whitepaper-download-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.preview-card {
+  background: var(--light);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  margin-bottom: var(--space-xl);
+}
+
+.preview-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.preview-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-lg) 0 0;
+}
+
+.preview-list li {
+  padding: var(--space-sm) 0;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.preview-list li:last-child {
+  border-bottom: none;
+}
+
+.preview-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.preview-stat {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.preview-stat .stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.preview-stat .stat-label {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+}
+
+.form-card {
+  background: var(--white);
+  padding: var(--space-2xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+}
+
+.form-card h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.form-card > p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-xl);
+}
+
+.whitepaper-form .form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.whitepaper-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--gray-800);
+}
+
+.whitepaper-form input,
+.whitepaper-form select {
+  width: 100%;
+  padding: var(--space-md);
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.whitepaper-form input:focus,
+.whitepaper-form select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin-top: var(--space-md);
+}
+
+.form-success {
+  text-align: center;
+  padding: var(--space-xl) 0;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--success);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto var(--space-lg);
+}
+
+.form-success h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.form-success p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-lg);
+}
+</style>
+
+<script>
+document.getElementById('whitepaper-form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Check honeypot
+  if (this.company_fax.value) {
+    // Bot detected - fake success
+    document.getElementById('whitepaper-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    return;
+  }
+  
+  // In production, this would submit to your API endpoint
+  // For now, just show success and reveal download
+  const formData = new FormData(this);
+  
+  // TODO: Send to API endpoint for email capture
+  // fetch('/api/whitepaper', { method: 'POST', body: formData })
+  
+  // Show success state
+  document.getElementById('whitepaper-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+});
+</script>
