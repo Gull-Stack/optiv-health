@@ -64,7 +64,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--gray-800);
-  background: var(--white);
+  background: #f9fafb;
   overflow-x: hidden;
 }
 
@@ -132,7 +132,7 @@ h3 {
 
 .btn-primary {
   background: var(--primary);
-  color: var(--white);
+  color: var(--white) !important;
 }
 
 .btn-primary:hover {
@@ -180,7 +180,7 @@ h3 {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--white);
+  background: #ffffff;
   box-shadow: var(--shadow);
 }
 
