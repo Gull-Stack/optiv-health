@@ -24,6 +24,8 @@ description: Schedule a 30-minute call with Brian Berekenbile to see how much yo
             <label for="fax_number">Fax Number</label>
             <input type="text" name="fax_number" id="fax_number" tabindex="-1" autocomplete="off">
           </div>
+          <!-- Timestamp token (bot detection) -->
+          <input type="hidden" name="_timestamp" id="_timestamp" value="">
           
           <div class="form-group">
             <label for="name">Your Name *</label>
@@ -76,6 +78,7 @@ description: Schedule a 30-minute call with Brian Berekenbile to see how much yo
           
           <button type="submit" class="btn btn-primary btn-lg">Send Request</button>
         </form>
+        <script>document.getElementById('_timestamp').value = Date.now();</script>
       </div>
       
       <div class="contact-info">
