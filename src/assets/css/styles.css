@@ -196,6 +196,24 @@ h3 {
   width: auto;
 }
 
+.logo-text, .footer-logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+}
+
+.footer-logo-text {
+  color: var(--white);
+  font-size: 1.75rem;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.logo-accent {
+  color: var(--secondary);
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -210,6 +228,57 @@ h3 {
 
 .nav-links a:hover {
   color: var(--primary);
+}
+
+/* Dropdown Navigation */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  padding: var(--space-sm) 0;
+  z-index: 100;
+  list-style: none;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--gray-700);
+  font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+  background: var(--light);
+  color: var(--primary);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
 }
 
 .mobile-toggle {

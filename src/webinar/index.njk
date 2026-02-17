@@ -1,0 +1,249 @@
+---
+layout: base.njk
+title: Free Webinar - Slash Healthcare Costs Without Cutting Coverage
+description: Join our March 3rd webinar to learn how Section 125 supplemental plans can save your company $600-900/employee/year while improving benefits.
+---
+
+<section class="page-header" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
+  <div class="container">
+    <div class="webinar-badge">📅 Live Webinar</div>
+    <h1>Slash Healthcare Costs Without Cutting Coverage</h1>
+    <p>Learn how Section 125 supplemental plans save employers $600-900/employee/year while giving employees better benefits.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="webinar-grid">
+      <div class="webinar-content">
+        <div class="webinar-date-card">
+          <div class="date-icon">📅</div>
+          <div class="date-details">
+            <span class="date-main">March 3, 2026</span>
+            <span class="date-time">2:00 PM Eastern / 11:00 AM Pacific</span>
+            <span class="date-duration">45 minutes + Live Q&A</span>
+          </div>
+        </div>
+        
+        <h2>What You'll Learn</h2>
+        <ul class="agenda-list">
+          <li>
+            <span class="agenda-icon">💡</span>
+            <div>
+              <strong>How Section 125 Plans Actually Work</strong>
+              <p>The IRS-approved mechanism that lets employees pay for benefits pre-tax — and why most employers don't use it.</p>
+            </div>
+          </li>
+          <li>
+            <span class="agenda-icon">💰</span>
+            <div>
+              <strong>The Math Behind the Savings</strong>
+              <p>Real numbers showing how companies save $600-900/employee while reducing their FICA tax burden.</p>
+            </div>
+          </li>
+          <li>
+            <span class="agenda-icon">💊</span>
+            <div>
+              <strong>Free Prescriptions & Telehealth</strong>
+              <p>How our supplemental plan includes 1,000+ free medications and unlimited virtual doctor visits.</p>
+            </div>
+          </li>
+          <li>
+            <span class="agenda-icon">📋</span>
+            <div>
+              <strong>Implementation Timeline</strong>
+              <p>From decision to live benefits in 2-3 weeks. We'll walk through exactly what's involved.</p>
+            </div>
+          </li>
+          <li>
+            <span class="agenda-icon">❓</span>
+            <div>
+              <strong>Live Q&A</strong>
+              <p>Bring your questions. We'll answer them live — no generic "we'll follow up" responses.</p>
+            </div>
+          </li>
+        </ul>
+        
+        <h2>Who Should Attend</h2>
+        <ul>
+          <li>HR Directors and Benefits Managers</li>
+          <li>CFOs and Finance Leaders</li>
+          <li>Business Owners (especially franchise operators)</li>
+          <li>Anyone responsible for employee benefits decisions</li>
+        </ul>
+        
+        <h2>About Your Host</h2>
+        <p>Brian Berekenbile has spent years helping employers navigate the complex world of employee benefits. His focus on Section 125 supplemental plans has helped companies across industries offer better benefits while reducing costs.</p>
+        
+        <p>This isn't a sales pitch disguised as education. You'll leave with actionable knowledge you can use immediately — whether or not you work with Optiv Health.</p>
+      </div>
+      
+      <div class="webinar-form">
+        <div class="form-card">
+          <h3>Register for Free</h3>
+          <p>Space is limited. Reserve your spot now.</p>
+          
+          <form action="/api/webinar" method="POST">
+            <!-- Honeypot -->
+            <div class="fax-number">
+              <input type="text" name="fax_number" tabindex="-1" autocomplete="off">
+            </div>
+            
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Work Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="company">Company Name *</label>
+              <input type="text" id="company" name="company" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="employees">Number of Employees</label>
+              <select id="employees" name="employees">
+                <option value="">Select range...</option>
+                <option value="25-50">25-50</option>
+                <option value="51-100">51-100</option>
+                <option value="101-250">101-250</option>
+                <option value="251-500">251-500</option>
+                <option value="500+">500+</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="btn btn-accent btn-lg" style="width: 100%;">Reserve My Spot →</button>
+            
+            <p class="form-note">Can't make it live? Register anyway and we'll send you the recording.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.webinar-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--dark);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.webinar-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .webinar-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .webinar-form {
+    order: -1;
+  }
+}
+
+.webinar-date-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  background: var(--light);
+  padding: var(--space-lg);
+  border-radius: 12px;
+  margin-bottom: var(--space-xl);
+}
+
+.date-icon {
+  font-size: 2.5rem;
+}
+
+.date-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-main {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.date-time, .date-duration {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+}
+
+.agenda-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xl) 0;
+}
+
+.agenda-list li {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--light);
+  border-radius: 8px;
+  margin-bottom: var(--space-sm);
+}
+
+.agenda-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.agenda-list strong {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.agenda-list p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+}
+
+.form-card {
+  background: var(--light);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  position: sticky;
+  top: 100px;
+}
+
+.form-card h3 {
+  margin-bottom: var(--space-xs);
+}
+
+.form-card > p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-lg);
+}
+
+.form-note {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  text-align: center;
+  margin-top: var(--space-md);
+  margin-bottom: 0;
+}
+
+.fax-number {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+</style>

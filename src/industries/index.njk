@@ -1,0 +1,102 @@
+---
+layout: base.njk
+title: Healthcare Benefits by Industry - Optiv Health
+description: Section 125 supplemental health plans tailored for your industry. See how businesses like yours save $600-900/employee/year on healthcare costs.
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Healthcare Benefits by Industry</h1>
+    <p>Every industry has unique challenges. We have solutions that work.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="industries-grid">
+      <a href="{{ '/industries/franchises/' | url }}" class="industry-card">
+        <div class="industry-icon">🏪</div>
+        <h3>Franchises & Multi-Location</h3>
+        <p>Consistent benefits across all locations. Simplified administration. Better retention.</p>
+      </a>
+      
+      <a href="{{ '/industries/home-healthcare/' | url }}" class="industry-card">
+        <div class="industry-icon">🏥</div>
+        <h3>Home Healthcare</h3>
+        <p>Attract and retain caregivers with benefits that matter to your distributed workforce.</p>
+      </a>
+      
+      <a href="{{ '/industries/hospitality/' | url }}" class="industry-card">
+        <div class="industry-icon">🏨</div>
+        <h3>Hospitality</h3>
+        <p>Affordable benefits for high-turnover industries. Reduce churn with better coverage.</p>
+      </a>
+      
+      <a href="{{ '/industries/manufacturing/' | url }}" class="industry-card">
+        <div class="industry-icon">🏭</div>
+        <h3>Manufacturing</h3>
+        <p>Keep your workforce healthy with preventive care and accessible telehealth.</p>
+      </a>
+      
+      <a href="{{ '/industries/construction/' | url }}" class="industry-card">
+        <div class="industry-icon">🔨</div>
+        <h3>Construction</h3>
+        <p>Mobile-friendly benefits for crews on the move. Telehealth from any job site.</p>
+      </a>
+      
+      <a href="{{ '/industries/staffing/' | url }}" class="industry-card">
+        <div class="industry-icon">👥</div>
+        <h3>Staffing Agencies</h3>
+        <p>Differentiate your placements with included health benefits. Win more contracts.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Don't See Your Industry?</h2>
+      <p>We work with businesses across all sectors. Let's talk about your specific needs.</p>
+      <a href="{{ '/contact/' | url }}" class="btn btn-accent btn-lg">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+}
+
+.industry-card {
+  background: var(--light);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.industry-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.industry-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.industry-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.industry-card p {
+  color: var(--gray-600);
+  margin: 0;
+}
+</style>
