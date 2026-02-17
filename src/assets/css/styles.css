@@ -800,6 +800,17 @@ h3 {
   color: var(--accent);
 }
 
+.footer-credit .gullstack-logo {
+  font-family: 'Young Serif', Georgia, serif;
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-credit .gullstack-logo span {
+  color: #a78bfa; /* GullStack purple accent */
+}
+
 @media (max-width: 900px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
