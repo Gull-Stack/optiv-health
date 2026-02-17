@@ -829,6 +829,12 @@ h3 {
   text-align: center;
 }
 
+.page-header-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .page-header h1 {
   color: var(--white);
 }
