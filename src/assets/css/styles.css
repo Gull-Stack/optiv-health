@@ -805,10 +805,14 @@ h3 {
   font-size: 1.1rem;
   color: #fff;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.footer-credit .gullstack-logo span {
-  color: #a78bfa; /* GullStack purple accent */
+.footer-credit .gullstack-bird {
+  height: 20px;
+  width: auto;
 }
 
 @media (max-width: 900px) {
