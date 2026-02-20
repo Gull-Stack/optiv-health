@@ -132,3 +132,51 @@ function showFormMessage(message, type) {
   
   setTimeout(() => msgEl.remove(), 5000);
 }
+
+// Glossary collapsible terms (mobile)
+const termCards = document.querySelectorAll('.term-card');
+termCards.forEach(card => {
+  const title = card.querySelector('.term-title');
+  const definition = card.querySelector('.term-definition');
+  
+  if (title && definition) {
+    title.addEventListener('click', () => {
+      // On mobile, toggle the expanded state
+      if (window.innerWidth <= 768) {
+        card.classList.toggle('expanded');
+      }
+    });
+  }
+});
+
+// Update glossary behavior on window resize
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    // Desktop - show all definitions
+    termCards.forEach(card => {
+      card.classList.remove('expanded');
+      const definition = card.querySelector('.term-definition');
+      if (definition) definition.style.display = 'block';
+    });
+  } else {
+    // Mobile - hide definitions unless expanded
+    termCards.forEach(card => {
+      const definition = card.querySelector('.term-definition');
+      if (definition && !card.classList.contains('expanded')) {
+        definition.style.display = 'none';
+      }
+    });
+  }
+});
+
+// Initialize glossary state on page load
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 768) {
+    termCards.forEach(card => {
+      const definition = card.querySelector('.term-definition');
+      if (definition && !card.classList.contains('expanded')) {
+        definition.style.display = 'none';
+      }
+    });
+  }
+});
