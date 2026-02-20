@@ -1,13 +1,33 @@
 ---
 layout: base.njk
-title: Book Your Free Consultation
-description: Schedule a 30-minute call with Brian Berekenbile to see how much your company could save with Optiv Health's Section 125 supplemental plans.
+title: Schedule Your Free Consultation
+description: Talk to our benefits experts about Section 125 supplemental plans. Get personalized guidance and answers to your questions.
 ---
 
 <section class="page-header">
   <div class="container">
-    <h1>Let's Talk</h1>
-    <p>Schedule a free consultation or register for our upcoming webinar.</p>
+    <div class="page-header-content">
+      <p class="page-eyebrow">Traditional Consultation</p>
+      <h1>Prefer to Talk? Let's Schedule a Call</h1>
+      <p class="page-subtitle">Get personalized guidance from our benefits experts. We'll answer your questions and explain how supplemental benefits could work for your specific situation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-options">
+      <div class="option-card">
+        <h3>🚀 Self-Service Quote</h3>
+        <p>Upload your payroll info and get a detailed quote within 24 hours. Perfect if you want to move quickly.</p>
+        <a href="{{ '/quote/' | url }}" class="btn btn-primary">Upload & Get Quote →</a>
+      </div>
+      <div class="option-card current">
+        <h3>💬 Traditional Consultation</h3>
+        <p>Schedule a call to discuss your situation, ask questions, and get personalized guidance from our experts.</p>
+        <span class="current-choice">You're here →</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -15,8 +35,8 @@ description: Schedule a 30-minute call with Brian Berekenbile to see how much yo
   <div class="container">
     <div class="contact-grid">
       <div class="contact-form">
-        <h2>Get Your Custom Quote</h2>
-        <p>Fill out the form below and I'll reach out within 24 hours with a personalized savings analysis.</p>
+        <h2>Schedule Your Free Consultation</h2>
+        <p>Tell us about your company and we'll reach out within 24 hours to schedule a personalized discussion about your benefits needs.</p>
         
         <form action="/api/contact" method="POST">
           <!-- Honeypot -->
@@ -76,7 +96,7 @@ description: Schedule a 30-minute call with Brian Berekenbile to see how much yo
             <textarea id="message" name="message" rows="4" placeholder="Current challenges, timeline, etc."></textarea>
           </div>
           
-          <button type="submit" class="btn btn-primary btn-lg">Send Request</button>
+          <button type="submit" class="btn btn-primary btn-lg">Schedule My Consultation</button>
         </form>
         <script>document.getElementById('_timestamp').value = Date.now();</script>
       </div>
@@ -120,6 +140,59 @@ description: Schedule a 30-minute call with Brian Berekenbile to see how much yo
 </section>
 
 <style>
+.contact-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+}
+
+@media (max-width: 768px) {
+  .contact-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.option-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.option-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.option-card.current {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+}
+
+.option-card h3 {
+  margin-bottom: var(--space-md);
+  color: var(--primary);
+}
+
+.option-card p {
+  margin-bottom: var(--space-lg);
+  color: var(--gray-600);
+}
+
+.current-choice {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;

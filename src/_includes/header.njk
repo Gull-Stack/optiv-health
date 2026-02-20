@@ -1,7 +1,7 @@
 <header class="header">
   <nav class="nav container">
     <a href="{{ '/' | url }}" class="logo">
-      <span class="logo-text">Optiv<span class="logo-accent">Health</span></span>
+      <img src="{{ '/assets/images/logo-main.png' | url }}" alt="Optiv Health Benefits" class="logo-image">
     </a>
     
     <button class="mobile-toggle" aria-label="Toggle menu">
@@ -27,10 +27,26 @@
           <li><a href="{{ '/industries/' | url }}">All Industries</a></li>
         </ul>
       </li>
-      <li><a href="{{ '/calculator/' | url }}">Calculator</a></li>
-      <li><a href="{{ '/faq/' | url }}">FAQ</a></li>
-      <li><a href="{{ '/webinar/' | url }}" class="btn btn-outline">Free Webinar</a></li>
-      <li><a href="{{ '/contact/' | url }}" class="btn btn-primary">Get Quote</a></li>
+      <li class="nav-dropdown">
+        <a href="{{ '/blog/' | url }}">Resources</a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ '/blog/' | url }}">Benefits Blog</a></li>
+          <li><a href="{{ '/calculator/' | url }}">Savings Calculator</a></li>
+          <li><a href="{{ '/whitepaper/' | url }}">Free Whitepaper</a></li>
+          <li><a href="{{ '/aca-2026-guide/' | url }}">ACA 2026 Guide</a></li>
+          <li><a href="{{ '/glossary/' | url }}">Benefits Glossary</a></li>
+          <li><a href="{{ '/faq/' | url }}">FAQ</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <a href="{{ '/quote/' | url }}">Get Started</a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ '/quote/' | url }}">🚀 Self-Service Quote</a></li>
+          <li><a href="{{ '/contact/' | url }}">💬 Schedule Consultation</a></li>
+          <li><a href="{{ '/webinar/' | url }}">📅 Free Webinar</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ '/quote/' | url }}" class="btn btn-primary">Get Quote</a></li>
     </ul>
   </nav>
 </header>

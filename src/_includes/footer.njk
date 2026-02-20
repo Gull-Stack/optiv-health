@@ -2,33 +2,65 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <span class="footer-logo-text">Optiv<span class="logo-accent">Health</span></span>
+        <img src="{{ '/assets/images/logo-with-text.png' | url }}" alt="Optiv Health Benefits" class="footer-logo-image">
         <p>{{ site.description }}</p>
+        <div class="footer-contact">
+          <p><strong>Get Your Quote:</strong></p>
+          <p>Upload your payroll info for instant processing and 24-hour response.</p>
+        </div>
       </div>
       
       <div class="footer-links">
-        <h4>Company</h4>
+        <h4>Solutions</h4>
         <ul>
-          <li><a href="{{ '/about/' | url }}">About Brian</a></li>
           <li><a href="{{ '/how-it-works/' | url }}">How It Works</a></li>
-          <li><a href="{{ '/benefits/' | url }}">Benefits</a></li>
-          <li><a href="{{ '/contact/' | url }}">Contact</a></li>
+          <li><a href="{{ '/section-125-plans/' | url }}">Section 125 Plans</a></li>
+          <li><a href="{{ '/benefits/' | url }}">Employee Benefits</a></li>
+          <li><a href="{{ '/free-prescriptions/' | url }}">Free Prescriptions</a></li>
+          <li><a href="{{ '/telehealth-benefits/' | url }}">Telehealth Benefits</a></li>
         </ul>
       </div>
       
       <div class="footer-links">
         <h4>Resources</h4>
         <ul>
+          <li><a href="{{ '/blog/' | url }}">Employee Benefits Blog</a></li>
           <li><a href="{{ '/calculator/' | url }}">Savings Calculator</a></li>
+          <li><a href="{{ '/whitepaper/' | url }}">Free Whitepaper</a></li>
+          <li><a href="{{ '/aca-2026-guide/' | url }}">ACA 2026 Guide</a></li>
+          <li><a href="{{ '/glossary/' | url }}">Benefits Glossary</a></li>
           <li><a href="{{ '/faq/' | url }}">FAQ</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="{{ '/industries/' | url }}">All Industries</a></li>
+          <li><a href="{{ '/industries/franchises/' | url }}">Franchises</a></li>
+          <li><a href="{{ '/industries/home-healthcare/' | url }}">Home Healthcare</a></li>
+          <li><a href="{{ '/webinar/' | url }}">Free Webinar</a></li>
           <li><a href="{{ '/case-studies/' | url }}">Case Studies</a></li>
         </ul>
       </div>
       
+      <div class="footer-links">
+        <h4>Research & Insights</h4>
+        <ul>
+          <li><a href="{{ '/blog/employee-retention-benefits-2026/' | url }}">Employee Retention Study</a></li>
+          <li><a href="{{ '/blog/healthcare-cost-control-strategies-2026/' | url }}">Cost Control Guide</a></li>
+          <li><a href="{{ '/blog/what-employees-really-want-benefits-2026/' | url }}">Employee Preferences</a></li>
+          <li><a href="{{ '/blog/insured-uninsured-solutions/' | url }}">Coverage Gap Solutions</a></li>
+        </ul>
+      </div>
+      
       <div class="footer-cta">
-        <h4>Ready to Save?</h4>
-        <p>See how much your company could save with a free consultation.</p>
-        <a href="{{ '/contact/' | url }}" class="btn btn-accent">Get Your Quote</a>
+        <h4>Ready to Save Money?</h4>
+        <p>Choose your path: upload payroll for instant quotes or schedule a consultation to discuss your needs.</p>
+        <div class="footer-cta-buttons">
+          <a href="{{ '/quote/' | url }}" class="btn btn-accent">Self-Service Quote</a>
+          <a href="{{ '/contact/' | url }}" class="btn btn-outline">Schedule Call</a>
+        </div>
       </div>
     </div>
     

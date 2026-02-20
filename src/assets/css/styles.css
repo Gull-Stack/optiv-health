@@ -2,18 +2,28 @@
    Optiv Health Benefits — Styles
    ========================================================================== */
 
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* GT Walsheim fallback - will use Inter as substitute until custom fonts loaded */
+
 :root {
-  /* Brand Colors - Will update from Brian's assets */
-  --primary: #1E3A5F;
-  --primary-dark: #152a45;
-  --secondary: #4A90A4;
-  --accent: #F5A623;
-  --accent-dark: #d4900e;
-  --success: #28a745;
+  /* Brand Colors - Updated from Brian's brand guide */
+  --primary: #2e2e2e;
+  --primary-dark: #1a1a1a;
+  --primary-blue: #0154a2;
+  --primary-green: #67ab44;
+  --secondary: #0154a2;
+  --accent: #ff6b35;
+  --accent-dark: #e5571e;
+  --accent-orange: #ff6b35;
+  --light-gray: #f5f5f5;
+  --success: #67ab44;
   
   /* Neutrals */
   --white: #ffffff;
   --light: #F8F9FA;
+  --light-blue: #F0F8FF;
   --gray-100: #f1f3f5;
   --gray-200: #e9ecef;
   --gray-300: #dee2e6;
@@ -26,7 +36,7 @@
   
   /* Typography */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'GT Walsheim', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   
   /* Spacing */
   --space-xs: 0.25rem;
@@ -91,24 +101,63 @@ a:hover {
   padding: 0 var(--space-lg);
 }
 
-/* Typography */
+/* Typography - Updated per brand guide */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-body);
-  font-weight: 700;
+  font-family: var(--font-display);
   line-height: 1.2;
-  color: var(--dark);
+  color: var(--primary);
+  margin-bottom: 1rem;
 }
 
+/* H1: Optiv 48px Bold - Most important title */
 h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 5vw, 3rem); /* ~48px */
+  font-weight: 700;
 }
 
+/* H2: Section Header 36px Bold */  
 h2 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.75rem, 4vw, 2.25rem); /* ~36px */
+  font-weight: 700;
 }
 
+/* H3: Subsection Header 28px - Green color per brand guide */
 h3 {
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem); /* ~28px */
+  font-weight: 400;
+  color: var(--primary-green);
+}
+
+/* H4: Supporting Header 22px */
+h4 {
+  font-size: 1.375rem; /* 22px */
+  font-weight: 600;
+}
+
+/* H5: Minor Header 18px */  
+h5 {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+}
+
+/* H6: Micro Header 14px */
+h6 {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600;
+}
+
+/* Body text: Inter 16-18px Regular */
+body {
+  font-family: var(--font-body);
+  font-size: 1rem; /* 16px base */
+  line-height: 1.5;
+  color: var(--primary);
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 .highlight {
@@ -191,9 +240,11 @@ h3 {
   padding: var(--space-md) var(--space-lg);
 }
 
-.logo-img {
+.logo-img,
+.logo-image {
   height: 45px;
   width: auto;
+  max-width: 180px;
 }
 
 .logo-text, .footer-logo-text {
@@ -208,6 +259,15 @@ h3 {
   font-size: 1.75rem;
   display: block;
   margin-bottom: var(--space-md);
+}
+
+.footer-logo-image {
+  height: 60px;
+  width: auto;
+  max-width: 250px;
+  margin-bottom: var(--space-md);
+  filter: brightness(0) invert(1); /* Makes the logo white for dark footer */
+}
 }
 
 .logo-accent {
@@ -331,7 +391,7 @@ h3 {
 
 .hero {
   padding: 180px 0 100px;
-  background: linear-gradient(135deg, var(--light) 0%, var(--white) 100%);
+  background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
 }
 
 .hero-content {
@@ -743,8 +803,8 @@ h3 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: var(--space-3xl);
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1.2fr;
+  gap: var(--space-xl);
   margin-bottom: var(--space-3xl);
 }
 
@@ -756,6 +816,25 @@ h3 {
 .footer-brand p {
   font-size: 0.875rem;
   color: rgba(255,255,255,0.6);
+  margin-bottom: var(--space-lg);
+}
+
+.footer-contact {
+  margin-top: var(--space-lg);
+}
+
+.footer-contact p {
+  margin-bottom: var(--space-xs);
+}
+
+.footer-contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
 }
 
 .footer-links h4,
@@ -785,6 +864,17 @@ h3 {
 .footer-cta p {
   font-size: 0.875rem;
   margin-bottom: var(--space-md);
+}
+
+.footer-cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.footer-cta-buttons .btn {
+  width: 100%;
+  text-align: center;
 }
 
 .footer-bottom {
@@ -817,6 +907,13 @@ h3 {
 .footer-credit .gullstack-bird {
   height: 24px;
   width: auto;
+}
+
+@media (max-width: 1200px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-lg);
+  }
 }
 
 @media (max-width: 900px) {
@@ -1928,4 +2025,119 @@ h3 {
   .term-card.expanded .term-title::after {
     content: ' −';
   }
+}
+
+/* ==========================================================================
+   Blog Section (Homepage)
+   ========================================================================== */
+
+.section-blog {
+  background: var(--light);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+}
+
+.blog-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: var(--space-xl);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.blog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.blog-card.featured {
+  grid-column: span 2;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+}
+
+@media (max-width: 1100px) {
+  .blog-card.featured {
+    grid-column: span 1;
+  }
+}
+
+.blog-header {
+  margin-bottom: var(--space-md);
+}
+
+.blog-tag {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 20px;
+}
+
+.blog-card.featured .blog-tag {
+  background: rgba(245, 166, 35, 0.3);
+  color: var(--accent);
+}
+
+.blog-card h3 {
+  margin-bottom: var(--space-md);
+  font-size: 1.25rem;
+}
+
+.blog-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-card h3 a:hover {
+  color: var(--secondary);
+}
+
+.blog-card.featured h3 a {
+  color: var(--white);
+}
+
+.blog-card.featured h3 a:hover {
+  color: var(--accent);
+}
+
+.blog-card p {
+  margin-bottom: var(--space-lg);
+  color: var(--gray-600);
+}
+
+.blog-card.featured p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.blog-read-more {
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.blog-read-more:hover {
+  color: var(--secondary);
+}
+
+.blog-card.featured .blog-read-more {
+  color: var(--accent);
+}
+
+.blog-card.featured .blog-read-more:hover {
+  color: var(--white);
+}
+
+.blog-cta {
+  text-align: center;
+  margin-top: var(--space-3xl);
 }

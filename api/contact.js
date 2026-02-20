@@ -77,6 +77,7 @@ Lead Source: Optiv Health Website (optiv-health.vercel.app)
 
       const mailOptions = {
         to: 'bryce@gullstack.com',
+        cc: 'brian@optivhealthbenefits.com',
         from: 'leads@gullstack.com', // Must be verified with SendGrid
         subject: `🏥 New Optiv Health Lead: ${company} (${employees} employees)`,
         text: emailBody,

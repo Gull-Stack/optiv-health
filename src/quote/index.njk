@@ -1,0 +1,764 @@
+---
+layout: base.njk
+title: Get Your Custom Quote - Upload Payroll for 24-Hour Response
+description: Upload your payroll information for instant processing. Get a detailed benefits quote and savings analysis within 24 hours.
+---
+
+<section class="page-header">
+  <div class="container">
+    <div class="page-header-content">
+      <p class="page-eyebrow">Self-Service Quote</p>
+      <h1>Get Your Custom Quote in 24 Hours</h1>
+      <p class="page-subtitle">Upload your payroll information for the fastest, most accurate benefits quote and savings analysis.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="quote-content">
+      <div class="quote-main">
+        <div class="quote-intro">
+          <h2>How It Works</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Submit Your Information</h3>
+                <p>Complete the form below with your company details and upload your most recent payroll report.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>We Analyze Your Data</h3>
+                <p>Our team reviews your payroll information and calculates your potential savings and benefits options.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Get Your Custom Quote</h3>
+                <p>Within 24 hours, you'll receive a detailed quote with exact savings amounts and implementation plan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-form-container">
+          <form id="quote-form" class="quote-form" enctype="multipart/form-data">
+            <div class="form-section">
+              <h3>Company Information</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="company-name">Company Name *</label>
+                  <input type="text" id="company-name" name="companyName" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="industry">Industry *</label>
+                  <select id="industry" name="industry" required>
+                    <option value="">Select your industry</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="technology">Technology</option>
+                    <option value="financial-services">Financial Services</option>
+                    <option value="retail">Retail</option>
+                    <option value="construction">Construction</option>
+                    <option value="franchises">Franchises</option>
+                    <option value="home-healthcare">Home Healthcare</option>
+                    <option value="professional-services">Professional Services</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="employee-count">Number of Full-Time Employees *</label>
+                  <select id="employee-count" name="employeeCount" required>
+                    <option value="">Select employee count</option>
+                    <option value="10-25">10-25 employees</option>
+                    <option value="26-50">26-50 employees</option>
+                    <option value="51-100">51-100 employees</option>
+                    <option value="101-250">101-250 employees</option>
+                    <option value="251-500">251-500 employees</option>
+                    <option value="500+">500+ employees</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="company-location">Primary Location *</label>
+                  <input type="text" id="company-location" name="companyLocation" placeholder="City, State" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Contact Information</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="contact-name">Your Name *</label>
+                  <input type="text" id="contact-name" name="contactName" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="title">Your Title *</label>
+                  <input type="text" id="title" name="title" placeholder="e.g., HR Director, CFO, Owner" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Current Benefits Information</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="current-carrier">Current Health Insurance Carrier</label>
+                  <input type="text" id="current-carrier" name="currentCarrier" placeholder="e.g., Blue Cross, Aetna, Cigna">
+                </div>
+                
+                <div class="form-group">
+                  <label for="monthly-premium">Approximate Monthly Premium Cost</label>
+                  <select id="monthly-premium" name="monthlyPremium">
+                    <option value="">Select range</option>
+                    <option value="under-25k">Under $25,000</option>
+                    <option value="25k-50k">$25,000 - $50,000</option>
+                    <option value="50k-100k">$50,000 - $100,000</option>
+                    <option value="100k-250k">$100,000 - $250,000</option>
+                    <option value="over-250k">Over $250,000</option>
+                  </select>
+                </div>
+                
+                <div class="form-group form-group-full">
+                  <label for="current-challenges">Current Benefits Challenges (Optional)</label>
+                  <textarea id="current-challenges" name="currentChallenges" rows="3" placeholder="e.g., High deductibles, employee complaints, rising costs..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section file-upload-section">
+              <h3>Payroll Information <span style="color: var(--gray-500); font-weight: normal; font-size: 0.875rem;">(Optional - but helps us give you exact numbers)</span></h3>
+              <div class="upload-info">
+                <p><strong>For the most precise quote, you can optionally upload your most recent payroll report that includes:</strong></p>
+                <ul>
+                  <li>Employee names and salaries</li>
+                  <li>Current benefit deductions</li>
+                  <li>Payroll frequency</li>
+                  <li>Total payroll costs</li>
+                </ul>
+                <p class="privacy-note">🔒 <strong>Your data is secure:</strong> All files are encrypted and only used for quote preparation. We never share your information.</p>
+              </div>
+              
+              <div class="file-upload-container">
+                <div class="file-upload-zone" id="file-upload-zone">
+                  <input type="file" id="payroll-file" name="payrollFile" accept=".pdf,.xlsx,.xls,.csv" hidden>
+                  <div class="file-upload-content">
+                    <div class="upload-icon">📄</div>
+                    <p class="upload-text">
+                      <strong>Click to upload</strong> or drag and drop your payroll report
+                    </p>
+                    <p class="upload-subtext">
+                      Optional • Accepts PDF, Excel, or CSV files (max 10MB)<br>
+                      <em>Without this, we'll estimate based on your employee count</em>
+                    </p>
+                  </div>
+                </div>
+                <div id="file-info" class="file-info" style="display: none;">
+                  <span id="file-name"></span>
+                  <button type="button" id="remove-file" class="remove-file">✕</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="urgency-selector">
+                <label>How quickly do you need this information?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="timing-asap" name="timing" value="asap" required>
+                    <label for="timing-asap">ASAP - Evaluating now</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="timing-month" name="timing" value="1-month" required>
+                    <label for="timing-month">Within 1 month</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="timing-quarter" name="timing" value="next-quarter" required>
+                    <label for="timing-quarter">Next quarter</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="timing-planning" name="timing" value="planning" required>
+                    <label for="timing-planning">Just planning ahead</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
+                Get My Custom Quote →
+              </button>
+              <p class="form-note">
+                You'll receive a detailed quote within <strong>24 hours</strong>. With payroll data, we'll give you exact numbers. Without it, we'll provide estimates based on your company size.
+              </p>
+            </div>
+          </form>
+
+          <div id="form-success" class="form-success" style="display: none;">
+            <div class="success-icon">✅</div>
+            <h3>Quote Request Submitted!</h3>
+            <p>Thank you for uploading your information. We're already working on your custom quote and savings analysis.</p>
+            
+            <div class="next-steps">
+              <h4>What happens next:</h4>
+              <div class="next-step">
+                <strong>Within 2 hours:</strong> We'll review your submission and send a confirmation email.
+              </div>
+              <div class="next-step">
+                <strong>Within 24 hours:</strong> You'll receive your detailed quote with exact savings amounts, implementation timeline, and next steps.
+              </div>
+              <div class="next-step">
+                <strong>Questions?</strong> We'll include a direct calendar link to schedule a call if you want to discuss your quote.
+              </div>
+            </div>
+
+            <div class="success-actions">
+              <a href="{{ '/calculator/' | url }}" class="btn btn-outline">Explore Calculator While You Wait</a>
+              <a href="{{ '/blog/' | url }}" class="btn btn-outline">Read Benefits Research</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="quote-sidebar">
+        <div class="guarantee-box">
+          <h3>Our Guarantee</h3>
+          <div class="guarantee-items">
+            <div class="guarantee-item">
+              <span class="guarantee-icon">⏱️</span>
+              <span>24-hour response guaranteed</span>
+            </div>
+            <div class="guarantee-item">
+              <span class="guarantee-icon">🔒</span>
+              <span>Your data stays confidential</span>
+            </div>
+            <div class="guarantee-item">
+              <span class="guarantee-icon">💰</span>
+              <span>No obligation quote</span>
+            </div>
+            <div class="guarantee-item">
+              <span class="guarantee-icon">📊</span>
+              <span>Detailed savings analysis (exact with payroll, estimated without)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-box">
+          <h3>What Others Are Saying</h3>
+          <blockquote>
+            "Got our quote in 18 hours with exact savings down to the dollar. Made the decision easy."
+            <cite>— HR Director, 150-employee company</cite>
+          </blockquote>
+        </div>
+        
+        <div class="help-box">
+          <h3>Need Help?</h3>
+          <p>Having trouble with the upload or have questions about what information we need?</p>
+          <a href="{{ '/contact/' | url }}" class="btn btn-outline">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.quote-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .quote-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+.quote-main {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.quote-intro {
+  background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+  padding: var(--space-3xl);
+}
+
+.quote-intro h2 {
+  margin-bottom: var(--space-xl);
+  color: var(--primary);
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.process-step {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--primary);
+}
+
+.step-content p {
+  color: var(--gray-700);
+  margin: 0;
+}
+
+.quote-form-container {
+  padding: var(--space-3xl);
+}
+
+.form-section {
+  margin-bottom: var(--space-3xl);
+}
+
+.form-section:last-of-type {
+  margin-bottom: var(--space-xl);
+}
+
+.form-section h3 {
+  margin-bottom: var(--space-lg);
+  color: var(--primary);
+  border-bottom: 2px solid var(--light);
+  padding-bottom: var(--space-sm);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--gray-800);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: var(--space-md);
+  border: 2px solid var(--gray-200);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+.file-upload-section {
+  background: var(--light);
+  padding: var(--space-xl);
+  border-radius: 8px;
+  border: 2px dashed var(--gray-300);
+}
+
+.upload-info {
+  margin-bottom: var(--space-xl);
+}
+
+.upload-info ul {
+  margin: var(--space-md) 0;
+  padding-left: var(--space-lg);
+}
+
+.upload-info li {
+  margin-bottom: var(--space-xs);
+}
+
+.privacy-note {
+  font-size: 0.875rem;
+  color: var(--success);
+  background: rgba(40, 167, 69, 0.1);
+  padding: var(--space-md);
+  border-radius: 4px;
+  margin-top: var(--space-md);
+}
+
+.file-upload-container {
+  position: relative;
+}
+
+.file-upload-zone {
+  border: 3px dashed var(--gray-300);
+  border-radius: 8px;
+  padding: var(--space-3xl);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--white);
+}
+
+.file-upload-zone:hover {
+  border-color: var(--primary);
+  background: rgba(30, 58, 95, 0.02);
+}
+
+.file-upload-zone.dragover {
+  border-color: var(--primary);
+  background: rgba(30, 58, 95, 0.05);
+}
+
+.upload-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.upload-text {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-sm);
+  color: var(--gray-700);
+}
+
+.upload-subtext {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--success);
+  color: var(--white);
+  padding: var(--space-md);
+  border-radius: 4px;
+  margin-top: var(--space-md);
+}
+
+.remove-file {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.remove-file:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.urgency-selector label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--gray-800);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.radio-item input[type="radio"] {
+  margin: 0;
+}
+
+.radio-item label {
+  margin: 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form-actions {
+  text-align: center;
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--gray-200);
+}
+
+.form-note {
+  margin-top: var(--space-md);
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.form-success {
+  text-align: center;
+  padding: var(--space-3xl);
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-lg);
+}
+
+.form-success h3 {
+  color: var(--success);
+  margin-bottom: var(--space-md);
+}
+
+.next-steps {
+  background: var(--light);
+  padding: var(--space-xl);
+  border-radius: 8px;
+  margin: var(--space-xl) 0;
+  text-align: left;
+}
+
+.next-steps h4 {
+  margin-bottom: var(--space-md);
+  color: var(--primary);
+}
+
+.next-step {
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  background: var(--white);
+  border-radius: 4px;
+  border-left: 3px solid var(--success);
+}
+
+.next-step:last-child {
+  margin-bottom: 0;
+}
+
+.success-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Sidebar styles */
+.quote-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.guarantee-box,
+.testimonial-box,
+.help-box {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.guarantee-box h3,
+.testimonial-box h3,
+.help-box h3 {
+  margin-bottom: var(--space-lg);
+  color: var(--primary);
+}
+
+.guarantee-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.guarantee-icon {
+  font-size: 1.25rem;
+}
+
+.testimonial-box blockquote {
+  font-style: italic;
+  margin: 0;
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.testimonial-box cite {
+  display: block;
+  margin-top: var(--space-md);
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  font-style: normal;
+}
+
+.help-box p {
+  margin-bottom: var(--space-lg);
+  color: var(--gray-600);
+}
+</style>
+
+<script>
+// File upload handling
+const fileUploadZone = document.getElementById('file-upload-zone');
+const fileInput = document.getElementById('payroll-file');
+const fileInfo = document.getElementById('file-info');
+const fileName = document.getElementById('file-name');
+const removeFileBtn = document.getElementById('remove-file');
+
+// Click to upload
+fileUploadZone.addEventListener('click', () => {
+  fileInput.click();
+});
+
+// Drag and drop
+fileUploadZone.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  fileUploadZone.classList.add('dragover');
+});
+
+fileUploadZone.addEventListener('dragleave', () => {
+  fileUploadZone.classList.remove('dragover');
+});
+
+fileUploadZone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  fileUploadZone.classList.remove('dragover');
+  const files = e.dataTransfer.files;
+  if (files.length > 0) {
+    handleFile(files[0]);
+  }
+});
+
+// File input change
+fileInput.addEventListener('change', (e) => {
+  if (e.target.files.length > 0) {
+    handleFile(e.target.files[0]);
+  }
+});
+
+// Handle file selection
+function handleFile(file) {
+  // Validate file type
+  const allowedTypes = ['application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'text/csv'];
+  if (!allowedTypes.includes(file.type)) {
+    alert('Please upload a PDF, Excel, or CSV file.');
+    return;
+  }
+  
+  // Validate file size (10MB max)
+  if (file.size > 10 * 1024 * 1024) {
+    alert('File size must be less than 10MB.');
+    return;
+  }
+  
+  // Show file info
+  fileName.textContent = file.name;
+  fileInfo.style.display = 'flex';
+  fileUploadZone.style.display = 'none';
+}
+
+// Remove file
+removeFileBtn.addEventListener('click', () => {
+  fileInput.value = '';
+  fileInfo.style.display = 'none';
+  fileUploadZone.style.display = 'block';
+});
+
+// Form submission
+document.getElementById('quote-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const submitBtn = document.getElementById('submit-btn');
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Uploading...';
+  submitBtn.disabled = true;
+  
+  try {
+    const formData = new FormData(e.target);
+    
+    const response = await fetch('/api/quote-upload', {
+      method: 'POST',
+      body: formData
+    });
+    
+    if (response.ok) {
+      // Show success message
+      document.getElementById('quote-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      
+      // Scroll to success message
+      document.getElementById('form-success').scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch (error) {
+    alert('There was an error submitting your quote request. Please try again or contact support.');
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }
+});
+</script>
