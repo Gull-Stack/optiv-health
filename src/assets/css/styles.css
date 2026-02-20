@@ -1002,3 +1002,266 @@ h3 {
     max-width: 100%;
   }
 }
+
+/* ACA 2026 Guide Specific Styles */
+.alert {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border-left: 4px solid;
+}
+
+.alert-warning {
+  background: #fff3cd;
+  border-color: #f0ad4e;
+  color: #856404;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-200);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+
+.state-impact-table {
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+.state-impact-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.state-impact-table th,
+.state-impact-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.state-impact-table th {
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.state-impact-table tbody tr:hover {
+  background: var(--gray-50);
+}
+
+.impact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.impact-card {
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.impact-card h4 {
+  margin: 0 0 1rem 0;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.solution-highlight {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.solution-highlight h3 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.solution-steps {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.step-number {
+  background: var(--accent);
+  color: var(--dark);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  color: var(--white);
+  margin: 0 0 0.5rem 0;
+}
+
+.step-content p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--primary);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 3px var(--primary);
+}
+
+.timeline-date {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.timeline-content {
+  color: var(--gray-700);
+  margin-top: 0.25rem;
+}
+
+.urgency-box {
+  background: linear-gradient(45deg, #ff6b6b, #ffa500);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.urgency-box h3 {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.urgency-box ul {
+  margin: 1rem 0 0 0;
+}
+
+.urgency-box li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .cta-box,
+.sidebar .download-box,
+.sidebar .webinar-box {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.sidebar .cta-box {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+}
+
+.sidebar .cta-box h3,
+.sidebar .cta-box p {
+  color: var(--white);
+}
+
+.sidebar .download-box {
+  border: 2px solid var(--accent);
+}
+
+.sidebar .webinar-box {
+  border: 2px solid var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .impact-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .step {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .timeline::before {
+    left: 15px;
+  }
+  
+  .timeline-item {
+    padding-left: 40px;
+  }
+  
+  .timeline-item::before {
+    left: 6px;
+  }
+}
