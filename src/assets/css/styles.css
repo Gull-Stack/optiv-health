@@ -242,9 +242,9 @@ p {
 
 .logo-img,
 .logo-image {
-  height: 45px;
+  height: 100px;
   width: auto;
-  max-width: 180px;
+  max-width: 400px;
 }
 
 .logo-text, .footer-logo-text {
@@ -262,9 +262,9 @@ p {
 }
 
 .footer-logo-image {
-  height: 60px;
+  height: 130px;
   width: auto;
-  max-width: 250px;
+  max-width: 550px;
   margin-bottom: var(--space-md);
   filter: brightness(0) invert(1); /* Makes the logo white for dark footer */
 }
@@ -809,7 +809,7 @@ p {
 }
 
 .footer-logo {
-  height: 40px;
+  height: 90px;
   margin-bottom: var(--space-md);
 }
 
