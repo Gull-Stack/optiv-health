@@ -2,7 +2,7 @@ module.exports = function(eleventyConfig) {
   // Pass through assets
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/sitemap.xml");
+  eleventyConfig.addPassthroughCopy("src/llms.txt");
 
   // Watch CSS for changes
   eleventyConfig.addWatchTarget("src/assets/css/");
