@@ -13,6 +13,9 @@
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:image" content="{{ site.url }}/assets/images/og-image.jpg">
   
+  <!-- Canonical URL (strips query params to prevent duplicate content) -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | url }}">
   
