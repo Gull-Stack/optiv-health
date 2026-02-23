@@ -1,107 +1,46 @@
+import sgMail from '@sendgrid/mail';
+
 export default async function handler(req, res) {
-  // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
   try {
-    const {
-      name,
-      email,
-      phone,
-      company,
-      employees,
-      role,
-      message,
-      fax_number,
-      _timestamp
-    } = req.body;
+    const { name, email, phone, company, employees, message } = req.body;
 
-    // Honeypot check - if fax_number is filled, it's a bot
-    if (fax_number) {
-      console.log('Bot detected via honeypot');
-      return res.status(200).json({ message: 'Thank you!' });
+    // Honeypot check
+    if (req.body.fax_number) {
+      return res.status(200).json({ message: 'Thank you! We\'ll be in touch within 24 hours.' });
     }
 
-    // Basic timestamp check (prevent very fast submissions)
-    const submissionTime = Date.now();
-    const formLoadTime = parseInt(_timestamp);
-    if (submissionTime - formLoadTime < 3000) { // Less than 3 seconds
-      console.log('Suspicious fast submission');
-      return res.status(200).json({ message: 'Thank you!' });
-    }
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-    // Basic validation
-    if (!name || !email || !company || !employees) {
-      return res.status(400).json({ message: 'Missing required fields' });
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return res.status(400).json({ message: 'Invalid email address' });
-    }
-
-    // Create the email body
     const emailBody = `
-New Optiv Health Lead Submission
+New Contact from Optiv Health Benefits
 
-Contact Information:
-• Name: ${name}
-• Email: ${email}
-• Phone: ${phone || 'Not provided'}
-• Company: ${company}
-• Role: ${role || 'Not specified'}
+Name: ${name || 'N/A'}
+Email: ${email || 'N/A'}
+Phone: ${phone || 'N/A'}
+Company: ${company || 'N/A'}
+Employees: ${employees || 'N/A'}
 
-Company Details:
-• Number of Employees: ${employees}
-• Additional Message: ${message || 'None provided'}
+Message:
+${message || 'No message provided'}
+    `.trim();
 
-Submitted: ${new Date().toLocaleString('en-US', { 
-  timeZone: 'America/Denver',
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  hour: '2-digit',
-  minute: '2-digit',
-  timeZoneName: 'short'
-})}
+    const msg = {
+      to: 'brian@optivhealthbenefits.com',
+      cc: 'bryce@gullstack.com',
+      from: 'leads@gullstack.com',
+      subject: `New Contact: ${name || 'Unknown'} from ${company || 'Unknown Company'}`,
+      text: emailBody,
+    };
 
-Lead Source: Optiv Health Website (optiv-health.vercel.app)
-`;
+    await sgMail.send(msg);
 
-    // Send email using SendGrid (if API key is configured)
-    if (process.env.SENDGRID_API_KEY) {
-      const sgMail = require('@sendgrid/mail');
-      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-      const mailOptions = {
-        to: 'bryce@gullstack.com',
-        cc: 'brian@optivhealthbenefits.com',
-        from: 'leads@gullstack.com', // Must be verified with SendGrid
-        subject: `🏥 New Optiv Health Lead: ${company} (${employees} employees)`,
-        text: emailBody,
-        html: emailBody.replace(/\n/g, '<br>').replace(/•/g, '&bull;'),
-        replyTo: email
-      };
-
-      await sgMail.send(mailOptions);
-      console.log('Email sent via SendGrid to bryce@gullstack.com');
-    } else {
-      // Log the submission if SendGrid isn't configured
-      console.log('New Optiv Health lead submission (SendGrid not configured):');
-      console.log(emailBody);
-    }
-
-    // Send success response
-    res.status(200).json({ 
-      message: 'Thank you for your interest! We\'ll be in touch within 24 hours.' 
-    });
-
+    return res.status(200).json({ message: 'Thank you for your interest! We\'ll be in touch within 24 hours.' });
   } catch (error) {
     console.error('Contact form error:', error);
-    res.status(500).json({ 
-      message: 'Internal server error. Please try again or contact us directly.' 
-    });
+    return res.status(500).json({ error: 'Failed to send message' });
   }
 }
