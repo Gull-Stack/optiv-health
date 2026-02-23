@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: Save $600-900/Employee/Year on Healthcare
-description: Section 125 supplemental health plans with free prescriptions, 24/7 telehealth, and a 98.4% renewal rate. Stacks with your existing major medical coverage.
+title: Section 125 Supplemental Health Benefits | Save $600-900 Per Employee | Optiv
+description: Reduce employee healthcare costs with Section 125 supplemental benefits. 1,000+ free medications, 24/7 telehealth, $600-900 savings per employee. Get quote today.
 ---
 
 <!-- Hero Section -->
@@ -9,8 +9,8 @@ description: Section 125 supplemental health plans with free prescriptions, 24/7
   <div class="container">
     <div class="hero-content">
       <p class="hero-eyebrow">Section 125 Supplemental Health Plans</p>
-      <h1>Your Healthcare Costs Are <span class="highlight">Out of Control</span></h1>
-      <p class="hero-subtitle">Every year, you watch premiums climb while employees complain about coverage gaps. What if you could give them <strong>better benefits</strong> while <strong>cutting your costs by $600-900 per employee</strong>?</p>
+      <h1>Save $600-900 Per Employee on Healthcare Costs with <span class="highlight">Section 125 Supplemental Benefits</span></h1>
+      <p class="hero-subtitle">Stop losing money to rising health insurance premiums. Our Section 125 supplemental plans reduce your costs while giving employees 1,000+ free medications and 24/7 telehealth access.</p>
       <div class="hero-cta">
         <a href="{{ '/quote/' | url }}" class="btn btn-primary btn-lg">Upload Payroll & Get Quote</a>
         <a href="{{ '/how-it-works/' | url }}" class="btn btn-outline btn-lg">How It Works</a>
@@ -250,6 +250,77 @@ description: Section 125 supplemental health plans with free prescriptions, 24/7
   </div>
 </section>
 
+<!-- FAQ Section -->
+<section class="section section-faq">
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Get answers to the most common questions about Section 125 supplemental health plans.</p>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            What is a Section 125 supplemental health plan?
+            <span class="faq-icon">+</span>
+          </button>
+        </h3>
+        <div class="faq-answer">
+          <p>A Section 125 plan (also called a cafeteria plan) lets employees pay for certain benefits with pre-tax dollars. Supplemental plans under Section 125 provide additional coverage — like free prescriptions and telehealth — that stacks on top of existing major medical, while reducing FICA taxes for both employer and employee.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            How much can companies save with Section 125 plans?
+            <span class="faq-icon">+</span>
+          </button>
+        </h3>
+        <div class="faq-answer">
+          <p>Most companies save $600-900 per employee per year through combined FICA tax reductions and healthcare cost offsets. For a 50-employee company, that's $30,000-$45,000 annually.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            Do employees pay taxes on Section 125 benefits?
+            <span class="faq-icon">+</span>
+          </button>
+        </h3>
+        <div class="faq-answer">
+          <p>No. Section 125 benefits are pre-tax, meaning employees don't pay federal income tax, Social Security tax, or Medicare tax on their contributions. This increases their take-home pay.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            How does a Section 125 plan reduce FICA taxes?
+            <span class="faq-icon">+</span>
+          </button>
+        </h3>
+        <div class="faq-answer">
+          <p>When employees elect pre-tax benefits, their taxable wages decrease. This reduces the 7.65% FICA tax obligation for BOTH the employer and employee on those benefit dollars.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            What medications are free with supplemental insurance?
+            <span class="faq-icon">+</span>
+          </button>
+        </h3>
+        <div class="faq-answer">
+          <p>Our plans include 1,000+ generic medications at zero cost to employees, covering categories like blood pressure, diabetes, cholesterol, antibiotics, mental health, and more.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Final CTA -->
 <section class="section section-cta">
   <div class="container">
@@ -268,4 +339,87 @@ document.getElementById('employees')?.addEventListener('input', function() {
   const savings = count * 750;
   document.getElementById('savings').textContent = '$' + savings.toLocaleString();
 });
+
+// FAQ accordion
+document.querySelectorAll('.faq-toggle').forEach(button => {
+  button.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const icon = this.querySelector('.faq-icon');
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    
+    // Close all other FAQs
+    document.querySelectorAll('.faq-toggle').forEach(otherButton => {
+      if (otherButton !== this) {
+        otherButton.setAttribute('aria-expanded', 'false');
+        otherButton.closest('.faq-item').querySelector('.faq-answer').style.display = 'none';
+        otherButton.querySelector('.faq-icon').textContent = '+';
+      }
+    });
+    
+    // Toggle this FAQ
+    if (isExpanded) {
+      this.setAttribute('aria-expanded', 'false');
+      answer.style.display = 'none';
+      icon.textContent = '+';
+    } else {
+      this.setAttribute('aria-expanded', 'true');
+      answer.style.display = 'block';
+      icon.textContent = '−';
+    }
+  });
+});
 </script>
+
+<style>
+/* FAQ Styles */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1rem;
+}
+
+.faq-question {
+  margin: 0;
+}
+
+.faq-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.5rem 0;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2d3748;
+}
+
+.faq-toggle:hover {
+  color: #3182ce;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #3182ce;
+}
+
+.faq-answer {
+  display: none;
+  padding-bottom: 1.5rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.faq-answer p {
+  margin: 0;
+}
+</style>
