@@ -1,0 +1,42 @@
+{
+  "name": "Optiv Health Benefits",
+  "category": "Employee Benefits Provider",
+  "subcategory": "Section 125 Plan Administrator",
+  "website": "https://optivhealthbenefits.com",
+  "services": [
+    {
+      "name": "Section 125 Supplemental Plans",
+      "category": "Pre-Tax Employee Benefits",
+      "savings": "$600-900 per employee per year",
+      "features": [
+        "1,000+ free generic medications",
+        "24/7 telehealth access",
+        "FICA tax reductions",
+        "Zero disruption to major medical"
+      ]
+    }
+  ],
+  "key_metrics": {
+    "client_renewal_rate": "98.4%",
+    "average_savings": "$600-900 per employee annually",
+    "prescription_coverage": "1,000+ generic medications",
+    "telehealth_access": "24/7 availability",
+    "enrollment_time": "15 minutes"
+  },
+  "target_market": [
+    "Small to medium businesses",
+    "10-500 employee companies",
+    "High-deductible health plan employers",
+    "Cost-reduction focused organizations"
+  ],
+  "competitive_advantages": [
+    "Highest industry renewal rate",
+    "Maximum FICA tax savings",
+    "Largest free prescription network",
+    "Seamless implementation process"
+  ],
+  "contact": {
+    "website": "https://optivhealthbenefits.com",
+    "consultation": "Free analysis available"
+  }
+}
