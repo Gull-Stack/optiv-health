@@ -2141,3 +2141,306 @@ p {
   text-align: center;
   margin-top: var(--space-3xl);
 }
+
+/* ==========================================================================
+   AEO: AI Summary Box
+   ========================================================================== */
+
+.ai-summary {
+  background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%);
+  border: 1px solid #b2dfdb;
+  border-left: 4px solid var(--primary-green);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--gray-800);
+}
+
+.ai-summary p {
+  margin: 0;
+}
+
+.ai-summary-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-green);
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   AEO: Comparison Table
+   ========================================================================== */
+
+.comparison-table {
+  margin: 2rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  min-width: 600px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 0.95rem;
+}
+
+.comparison-table thead th {
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.comparison-table thead th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.comparison-table thead th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+.comparison-table tbody tr:hover {
+  background: var(--gray-100);
+}
+
+.comparison-table .winner-col {
+  background: #f0fdf4;
+  font-weight: 600;
+}
+
+.comparison-table thead .winner-col {
+  background: var(--primary-green);
+  color: var(--white);
+}
+
+.comparison-table .check-icon {
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.comparison-table .x-icon {
+  color: #dc3545;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   AEO: FAQ Accordion (native <details>)
+   ========================================================================== */
+
+.faq-accordion {
+  margin: 2rem 0;
+}
+
+.faq-accordion details {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-accordion details[open] {
+  box-shadow: var(--shadow);
+  border-color: var(--primary-blue);
+}
+
+.faq-accordion summary {
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-accordion summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--gray-500);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.faq-accordion details[open] summary::after {
+  content: '\2212';
+  color: var(--primary-blue);
+}
+
+.faq-accordion .faq-answer {
+  padding: 0 1.5rem 1.25rem;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+.faq-accordion .faq-answer p {
+  margin-bottom: 0.75rem;
+}
+
+.faq-accordion .faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   AEO: Brand Facts Page
+   ========================================================================== */
+
+.brand-facts-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 1.5rem 0;
+}
+
+.brand-facts-table th,
+.brand-facts-table td {
+  padding: 0.875rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 0.95rem;
+}
+
+.brand-facts-table th {
+  background: var(--gray-100);
+  font-weight: 600;
+  color: var(--primary);
+  width: 35%;
+}
+
+.brand-facts-table td {
+  color: var(--gray-700);
+}
+
+/* AEO: Content grid for guide pages with sidebar */
+.content-section {
+  padding: var(--space-3xl) 0;
+  background: var(--light);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.content-grid .main-content h2 {
+  margin-top: 2.5rem;
+}
+
+.content-grid .main-content h2:first-child {
+  margin-top: 0;
+}
+
+.content-grid .main-content ul,
+.content-grid .main-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.content-grid .main-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.breadcrumb {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: rgba(255,255,255,0.6);
+  margin: 0 0.25rem;
+}
+
+.page-subtitle {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: var(--space-md) auto 0;
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   CTA Section (bottom of guide pages)
+   ========================================================================== */
+
+.cta-section {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+  color: var(--white);
+}
+
+.cta-section h2 {
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.cta-section p {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-group {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--white) !important;
+}
+
+.btn-secondary:hover {
+  background: var(--white);
+  color: var(--primary) !important;
+}
