@@ -3,26 +3,23 @@
    ========================================================================== */
 
 /* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-/* GT Walsheim fallback - will use Inter as substitute until custom fonts loaded */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Nunito:wght@400;700&display=swap');
 
 :root {
-  /* Brand Colors - Updated from Brian's brand guide */
-  --primary: #2e2e2e;
-  --primary-dark: #1a1a1a;
-  --primary-blue: #0154a2;
-  --primary-green: #67ab44;
-  --secondary: #0154a2;
-  --accent: #ff6b35;
-  --accent-dark: #e5571e;
-  --accent-orange: #ff6b35;
-  --light-gray: #f5f5f5;
-  --success: #67ab44;
+  /* Brand Colors - 2026 Brand Refresh */
+  --primary: #1b3659;
+  --primary-dark: #0f2440;
+  --teal: #4a90a4;
+  --teal-light: #64b5f6;
+  --teal-tint: #80cbc4;
+  --slate: #2c3e50;
+  --crimson: #841617;
+  --secondary: #4a90a4;
+  --accent: #841617;
   
   /* Neutrals */
   --white: #ffffff;
-  --light: #F8F9FA;
+  --light: #f8f9fa;
   --light-blue: #F0F8FF;
   --gray-100: #f1f3f5;
   --gray-200: #e9ecef;
@@ -32,11 +29,12 @@
   --gray-600: #6c757d;
   --gray-700: #495057;
   --gray-800: #343a40;
-  --dark: #1A1A2E;
-  
+  --dark: #1b3659;
+
   /* Typography */
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'GT Walsheim', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Oswald', sans-serif;
+  --font-heading: 'Source Sans Pro', sans-serif;
+  --font-body: 'Nunito', sans-serif;
   
   /* Spacing */
   --space-xs: 0.25rem;
@@ -72,8 +70,8 @@ html {
 body {
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.6;
-  color: var(--gray-800);
+  line-height: 1.7;
+  color: #2d2d2d;
   background: #f9fafb;
   overflow-x: hidden;
 }
@@ -85,13 +83,13 @@ img {
 }
 
 a {
-  color: var(--primary);
+  color: var(--teal);
   text-decoration: none;
   transition: var(--transition);
 }
 
 a:hover {
-  color: var(--secondary);
+  color: var(--teal-light);
 }
 
 /* Container */
@@ -101,67 +99,71 @@ a:hover {
   padding: 0 var(--space-lg);
 }
 
-/* Typography - Updated per brand guide */
+/* Typography - 2026 Brand Refresh */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  line-height: 1.2;
-  color: var(--primary);
   margin-bottom: 1rem;
 }
 
-/* H1: Optiv 48px Bold - Most important title */
+/* H1: Oswald Bold, 3.5rem, uppercase, letter-spacing: 0.1em */
 h1 {
-  font-size: clamp(2.5rem, 5vw, 3rem); /* ~48px */
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  color: var(--primary);
 }
 
-/* H2: Section Header 36px Bold */  
+/* H2: Oswald Regular, 2.5rem, uppercase */
 h2 {
-  font-size: clamp(1.75rem, 4vw, 2.25rem); /* ~36px */
-  font-weight: 700;
-}
-
-/* H3: Subsection Header 28px - Green color per brand guide */
-h3 {
-  font-size: clamp(1.25rem, 3vw, 1.75rem); /* ~28px */
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 400;
-  color: var(--primary-green);
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--primary);
 }
 
-/* H4: Supporting Header 22px */
+/* H3: Source Sans Pro Bold, 2rem, crimson color */
+h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--crimson);
+}
+
+/* H4, H5, H6: Source Sans Pro */
 h4 {
-  font-size: 1.375rem; /* 22px */
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--primary);
 }
 
-/* H5: Minor Header 18px */  
 h5 {
-  font-size: 1.125rem; /* 18px */
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--primary);
 }
 
-/* H6: Micro Header 14px */
 h6 {
-  font-size: 0.875rem; /* 14px */
-  font-weight: 600;
-}
-
-/* Body text: Inter 16-18px Regular */
-body {
-  font-family: var(--font-body);
-  font-size: 1rem; /* 16px base */
-  line-height: 1.5;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
   color: var(--primary);
 }
 
 p {
   font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 1rem;
 }
 
 .highlight {
-  color: var(--accent);
+  color: var(--teal);
 }
 
 /* Buttons */
@@ -192,13 +194,13 @@ p {
 }
 
 .btn-accent {
-  background: var(--accent);
-  color: var(--dark);
+  background: var(--crimson);
+  color: var(--white) !important;
 }
 
 .btn-accent:hover {
-  background: var(--accent-dark);
-  color: var(--dark);
+  background: #6b1213;
+  color: var(--white) !important;
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -229,7 +231,7 @@ p {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #ffffff;
+  background: var(--primary);
   box-shadow: var(--shadow);
 }
 
@@ -282,11 +284,11 @@ p {
 
 .nav-links a {
   font-weight: 500;
-  color: var(--gray-700);
+  color: rgba(255,255,255,0.9);
 }
 
 .nav-links a:hover {
-  color: var(--primary);
+  color: var(--teal-tint);
 }
 
 /* Dropdown Navigation */
@@ -354,7 +356,7 @@ p {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--dark);
+  background: var(--white);
   transition: var(--transition);
 }
 
@@ -390,7 +392,8 @@ p {
 
 .hero {
   padding: 180px 0 100px;
-  background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+  background: var(--primary);
+  color: var(--white);
 }
 
 .hero-content {
@@ -403,17 +406,18 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--secondary);
+  color: var(--teal-tint);
   margin-bottom: var(--space-md);
 }
 
 .hero h1 {
   margin-bottom: var(--space-lg);
+  color: var(--white);
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--gray-600);
+  color: rgba(255,255,255,0.9);
   margin-bottom: var(--space-xl);
   max-width: 650px;
 }
@@ -440,12 +444,12 @@ p {
 .proof-number {
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--teal-tint);
 }
 
 .proof-label {
   font-size: 0.875rem;
-  color: var(--gray-600);
+  color: rgba(255,255,255,0.8);
 }
 
 @media (max-width: 768px) {
@@ -479,7 +483,7 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--secondary);
+  color: var(--teal);
   margin-bottom: var(--space-sm);
 }
 
@@ -532,7 +536,7 @@ p {
 }
 
 .section-solution .section-eyebrow {
-  color: var(--accent);
+  color: var(--teal-tint);
 }
 
 .solution-grid {
@@ -561,7 +565,7 @@ p {
 }
 
 .solution-list .check {
-  color: var(--accent);
+  color: var(--teal-tint);
   font-weight: bold;
 }
 
@@ -681,7 +685,7 @@ p {
 
 .calc-input-group input:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--teal-tint);
   background: rgba(255,255,255,0.15);
 }
 
@@ -701,7 +705,7 @@ p {
 .calc-amount {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--accent);
+  color: var(--teal-tint);
 }
 
 /* Stats/Proof Section */
@@ -753,7 +757,7 @@ p {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: var(--space-md);
-  color: var(--accent);
+  color: var(--teal-tint);
 }
 
 .webinar-card h2 {
@@ -775,7 +779,7 @@ p {
 
 /* Final CTA Section */
 .section-cta {
-  background: var(--dark);
+  background: var(--primary);
   text-align: center;
 }
 
@@ -795,7 +799,7 @@ p {
    ========================================================================== */
 
 .footer {
-  background: var(--dark);
+  background: var(--primary);
   color: rgba(255,255,255,0.8);
   padding: var(--space-4xl) 0 var(--space-xl);
 }
@@ -828,12 +832,13 @@ p {
 }
 
 .footer-contact a {
-  color: var(--accent);
+  color: var(--teal-tint);
   text-decoration: none;
   font-weight: 500;
 }
 
 .footer-contact a:hover {
+  color: var(--teal-light);
   text-decoration: underline;
 }
 
@@ -858,7 +863,7 @@ p {
 }
 
 .footer-links a:hover {
-  color: var(--accent);
+  color: var(--teal-tint);
 }
 
 .footer-cta p {
@@ -887,7 +892,7 @@ p {
 }
 
 .footer-credit a {
-  color: var(--accent);
+  color: var(--teal-tint);
 }
 
 .footer-credit .gullstack-logo {
@@ -1754,13 +1759,13 @@ p {
 }
 
 .read-more {
-  color: var(--accent);
+  color: var(--teal);
   font-weight: 600;
   text-decoration: none;
 }
 
 .read-more:hover {
-  color: var(--accent-dark);
+  color: var(--teal-light);
 }
 
 .blog-sidebar .blog-categories,
@@ -2077,14 +2082,14 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: var(--accent);
+  background: var(--teal);
   color: var(--white);
   border-radius: 20px;
 }
 
 .blog-card.featured .blog-tag {
-  background: rgba(245, 166, 35, 0.3);
-  color: var(--accent);
+  background: rgba(74, 144, 164, 0.3);
+  color: var(--teal-tint);
 }
 
 .blog-card h3 {
@@ -2130,7 +2135,7 @@ p {
 }
 
 .blog-card.featured .blog-read-more {
-  color: var(--accent);
+  color: var(--teal-tint);
 }
 
 .blog-card.featured .blog-read-more:hover {
