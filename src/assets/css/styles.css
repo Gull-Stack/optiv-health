@@ -624,38 +624,43 @@ p {
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-xl);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2xl);
 }
 
 .step-card {
-  background: var(--white);
-  padding: var(--space-xl);
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: var(--shadow);
+  text-align: left;
+  padding: 0;
 }
 
 .step-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background: var(--primary);
-  color: var(--white);
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 3rem;
   font-weight: 700;
-  border-radius: 50%;
-  margin-bottom: var(--space-md);
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
 }
 
 .step-card h3 {
   margin-bottom: var(--space-sm);
+  font-size: 1.25rem;
 }
 
 .step-card p {
   color: var(--gray-600);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  .step-card {
+    border-left: 3px solid var(--teal);
+    padding-left: var(--space-lg);
+  }
 }
 
 /* Calculator Section */
@@ -1256,18 +1261,7 @@ p {
   gap: 1rem;
 }
 
-.step-number {
-  background: var(--accent);
-  color: var(--dark);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  flex-shrink: 0;
-}
+/* step-number styled in main steps section above */
 
 .step-content h4 {
   color: var(--white);
