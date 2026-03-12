@@ -1,6 +1,6 @@
-import sgMail from '@sendgrid/mail';
+const sgMail = require('@sendgrid/mail');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
 
     // Honeypot check
     if (req.body.fax_number) {
-      return res.status(200).json({ message: 'Thank you! We\'ll be in touch within 24 hours.' });
+      return res.status(200).json({ message: "Thank you! We'll be in touch within 24 hours." });
     }
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -28,19 +28,29 @@ Message:
 ${message || 'No message provided'}
     `.trim();
 
-    const msg = {
+    // Notification to Brian + CC Bryce
+    await sgMail.send({
       to: 'brian@optivhealthbenefits.com',
       cc: 'bryce@gullstack.com',
       from: 'leads@gullstack.com',
       subject: `New Contact: ${name || 'Unknown'} from ${company || 'Unknown Company'}`,
       text: emailBody,
-    };
+      replyTo: email || undefined,
+    });
 
-    await sgMail.send(msg);
+    // Auto-reply
+    if (email) {
+      await sgMail.send({
+        to: email,
+        from: 'leads@gullstack.com',
+        subject: 'Thanks for contacting Optiv Health Benefits',
+        text: `Hi ${name || 'there'},\n\nThank you for reaching out to Optiv Health Benefits. We've received your message and will get back to you within 24 hours.\n\nBest regards,\nOptiv Health Benefits Team`,
+      });
+    }
 
-    return res.status(200).json({ message: 'Thank you for your interest! We\'ll be in touch within 24 hours.' });
+    return res.status(200).json({ message: "Thank you! We'll be in touch within 24 hours." });
   } catch (error) {
     console.error('Contact form error:', error);
     return res.status(500).json({ error: 'Failed to send message' });
   }
-}
+};

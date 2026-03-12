@@ -1,7 +1,9 @@
-import sgMail from '@sendgrid/mail';
-import { IncomingForm } from 'formidable';
+const sgMail = require('@sendgrid/mail');
+const { IncomingForm } = require('formidable');
+const fs = require('fs');
 
-export const config = {
+// Disable body parser for multipart form data
+const config = {
   api: {
     bodyParser: false,
   },
@@ -10,7 +12,7 @@ export const config = {
 function parseForm(req) {
   return new Promise((resolve, reject) => {
     const form = new IncomingForm({
-      maxFileSize: 10 * 1024 * 1024, // 10MB
+      maxFileSize: 10 * 1024 * 1024,
       keepExtensions: true,
     });
     form.parse(req, (err, fields, files) => {
@@ -20,7 +22,6 @@ function parseForm(req) {
   });
 }
 
-// Flatten formidable v3 fields (arrays of single values)
 function flatten(fields) {
   const out = {};
   for (const [k, v] of Object.entries(fields)) {
@@ -29,7 +30,7 @@ function flatten(fields) {
   return out;
 }
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -70,7 +71,6 @@ ${files.payrollFile ? `Payroll file attached: ${Array.isArray(files.payrollFile)
     const payrollFile = files.payrollFile ? (Array.isArray(files.payrollFile) ? files.payrollFile[0] : files.payrollFile) : null;
     
     if (payrollFile && payrollFile.filepath) {
-      const fs = await import('fs');
       const fileBuffer = fs.readFileSync(payrollFile.filepath);
       attachments.push({
         content: fileBuffer.toString('base64'),
@@ -91,7 +91,6 @@ ${files.payrollFile ? `Payroll file attached: ${Array.isArray(files.payrollFile)
 
     await sgMail.send(msg);
 
-    // Auto-reply to prospect
     if (fields.email) {
       const autoReply = {
         to: fields.email,
@@ -111,3 +110,6 @@ ${files.payrollFile ? `Payroll file attached: ${Array.isArray(files.payrollFile)
     });
   }
 }
+
+module.exports = handler;
+module.exports.config = config;
