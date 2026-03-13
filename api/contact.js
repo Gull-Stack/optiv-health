@@ -1,5 +1,15 @@
 const sgMail = require('@sendgrid/mail');
 
+function isGibberish(text) {
+  if (!text || text.length < 2) return false;
+  const cleaned = text.toLowerCase().replace(/[^a-z]/g, '');
+  if (cleaned.length < 2) return false;
+  const vowels = cleaned.match(/[aeiou]/g);
+  if (!vowels || vowels.length < cleaned.length * 0.15) return true;
+  if (/[^aeiou]{5,}/i.test(cleaned)) return true;
+  return false;
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
@@ -11,6 +21,16 @@ module.exports = async function handler(req, res) {
     // Honeypot check
     if (req.body.fax_number) {
       return res.status(200).json({ message: "Thank you! We'll be in touch within 24 hours." });
+    }
+
+    // Gibberish detection
+    if (isGibberish(name)) {
+      console.log('Gibberish name detected');
+      return res.status(200).json({ message: 'Thank you!' });
+    }
+    if (name && name.trim().length < 2) {
+      console.log('Suspiciously short name');
+      return res.status(200).json({ message: 'Thank you!' });
     }
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
